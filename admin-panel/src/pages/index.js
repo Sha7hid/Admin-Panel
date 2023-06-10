@@ -1,11 +1,17 @@
-import Head from 'next/head'
-
-
-
-
-
-
-export default function Home() {
+import Head from "next/head";
+import React from "react";
+import { Row, Col } from "react-bootstrap";
+import styles from "../styles/Home.module.css";
+export const getStaticProps = async () => {
+  const res = await fetch(
+    "http://ec2-43-204-234-19.ap-south-1.compute.amazonaws.com:3000/api/horror"
+  );
+  const data = await res.json();
+  return {
+    props: { results: data },
+  };
+};
+export default function Home({ results }) {
   return (
     <>
       <Head>
@@ -14,9 +20,24 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
-    <h1>Hello Testing...</h1>
+      <main className={styles.main}>
+      <Row className={styles.row}>
+        {results.map((result) => (
+          <>
+            <Col className={styles.col} md={4}>
+              
+                <div className={styles.content}>
+                  <h1>{result.name}</h1>
+                  <img src={result.image} width={250} height={250} alt="" />
+                  <p>{result.rating}</p>
+                  <p>{result.release_year}</p>
+                </div>
+              </Col>
+          
+          </>
+        ))}
+          </Row>
       </main>
     </>
-  )
+  );
 }
