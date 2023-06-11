@@ -1,20 +1,17 @@
 .main{
-display: flex;
-justify-content: center;
-}
-.row{
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-top: 4rem;
 }
-.col{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.link{
+    text-decoration: none;
+    color: white;
 }
-.content{
+.link:hover{
+    color: white;
+}
+.navbar{
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
 }
