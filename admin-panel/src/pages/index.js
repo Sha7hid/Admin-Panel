@@ -1,15 +1,18 @@
 import Head from "next/head";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Card from 'react-bootstrap/Card';
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from 'react-bootstrap/Nav';
 import styles from "../styles/Home.module.css";
-import { Row , Col} from "react-bootstrap";
+import { Row , Col, Button} from "react-bootstrap";
 import Link from "next/link";
+import Modals from "@/components/modal";
 export const getStaticProps = async () => {
+
+
   const res = await fetch(
-    "http://ec2-3-110-123-68.ap-south-1.compute.amazonaws.com:3000/api/horror"
+    "http://ec2-65-1-107-170.ap-south-1.compute.amazonaws.com:3000/api/horror"
   );
   const data = await res.json();
   return {
@@ -17,6 +20,11 @@ export const getStaticProps = async () => {
   };
 };
 export default function Home({ results }) {
+  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <Head>
@@ -44,12 +52,16 @@ export default function Home({ results }) {
         </Container>
       </Navbar>
       <main className={styles.main}>
+      {results.map((result) => (
+      <Modals show={show} onHide={handleClose} props={result}/>
+         ))}
       <Row>
         {results.map((result) => (
+          
           <>
          
             <Col>
-            <Card style={{ width: '18rem', marginTop: '2rem' }}>
+            <Card style={{ width: '18rem', marginTop: '2rem' , marginLeft:'1.5rem', marginBottom:'1rem'}}>
       <Card.Img width={250} height={350} variant="top" src={result.image} />
       <Card.Body>
         <Card.Title>{result.name}</Card.Title>
@@ -60,7 +72,11 @@ export default function Home({ results }) {
         Released Year - {result.release_year}
 
         </Card.Text>
-  
+  <Card.Footer>
+  <Button variant="default" className={styles.button} onClick={handleShow}>Update</Button>
+  <Button variant="default" className={styles.button2}>Delete</Button>
+     
+  </Card.Footer>
       </Card.Body>
     </Card>
             </Col>
@@ -73,4 +89,5 @@ export default function Home({ results }) {
       </main>
     </>
   );
+  
 }

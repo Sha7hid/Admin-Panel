@@ -20,7 +20,7 @@ export default function Add() {
         image: formData.get('image')
       };
 
-      fetch('http://ec2-3-110-123-68.ap-south-1.compute.amazonaws.com:3000/api/horror/add', {
+      fetch('http://ec2-65-1-107-170.ap-south-1.compute.amazonaws.com:3000/api/horror/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
