@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
 
 
   const res = await fetch(
-    "http://ec2-65-1-107-170.ap-south-1.compute.amazonaws.com:3000/api/horror"
+    "https://horror-api-production.up.railway.app/api/horror"
   );
   const data = await res.json();
   return {

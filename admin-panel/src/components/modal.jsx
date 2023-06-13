@@ -16,7 +16,7 @@ export default function Modals(props) {
     e.preventDefault();
     const id = result._id;
 
-    fetch(`http://ec2-65-1-107-170.ap-south-1.compute.amazonaws.com:3000/api/horror/horror/edit/${id}`, {
+    fetch(`https://horror-api-production.up.railway.app/api/horror/horror/edit/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

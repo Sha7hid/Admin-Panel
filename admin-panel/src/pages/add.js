@@ -20,7 +20,7 @@ export default function Add() {
         image: formData.get('image')
       };
 
-      fetch('http://ec2-65-1-107-170.ap-south-1.compute.amazonaws.com:3000/api/horror/add', {
+      fetch('https://horror-api-production.up.railway.app/api/horror/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
