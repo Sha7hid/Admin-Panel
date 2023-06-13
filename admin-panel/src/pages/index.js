@@ -21,10 +21,16 @@ export const getStaticProps = async () => {
 };
 export default function Home({ results }) {
   
-  const [show, setShow] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = (id) => {
+    setSelectedId(id);
+  };
+
+  const handleClose = () => {
+    setSelectedId(null);
+  };
+
   return (
     <>
       <Head>
@@ -53,8 +59,13 @@ export default function Home({ results }) {
       </Navbar>
       <main className={styles.main}>
       {results.map((result) => (
-      <Modals show={show} onHide={handleClose} props={result}/>
-         ))}
+           <Modals
+           key={result._id}
+           show={selectedId === result._id}
+           handleClose={handleClose}
+           result={result}
+         />
+        ))}
       <Row>
         {results.map((result) => (
           
@@ -73,7 +84,7 @@ export default function Home({ results }) {
 
         </Card.Text>
   <Card.Footer>
-  <Button variant="default" className={styles.button} onClick={handleShow}>Update</Button>
+  <Button variant="default" className={styles.button} onClick={() => handleShow(result._id)}>Update</Button>
   <Button variant="default" className={styles.button2}>Delete</Button>
      
   </Card.Footer>
