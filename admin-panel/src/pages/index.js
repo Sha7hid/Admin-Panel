@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
 
 
   const res = await fetch(
-    "https://horror-api-production.up.railway.app/api/horror"
+    "https://horror-api-production.up.railway.app/api/horror",{ cache: 'no-store' }
   );
   const data = await res.json();
   return {
