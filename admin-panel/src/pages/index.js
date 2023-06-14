@@ -31,6 +31,22 @@ export default function Home({ results }) {
     setSelectedId(null);
   };
 
+  const handleDelete = (props) => {
+    const id = props;
+ 
+
+    fetch(`https://horror-api-production.up.railway.app/api/horror/horror/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
+  };
+
+
   return (
     <>
       <Head>
@@ -85,7 +101,7 @@ export default function Home({ results }) {
         </Card.Text>
   <Card.Footer>
   <Button variant="default" className={styles.button} onClick={() => handleShow(result._id)}>Update</Button>
-  <Button variant="default" className={styles.button2}>Delete</Button>
+  <Button variant="default" className={styles.button2} onClick={() => handleDelete(result._id)}>Delete</Button>
      
   </Card.Footer>
       </Card.Body>

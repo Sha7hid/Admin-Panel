@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState } from 'react';
 import styles from '../styles/add.module.css';
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Link from "next/link";
 import Head from "next/head";
 export default function Add() {
+  const [success, setSuccess] = useState(null);
   useEffect(() => {
     const myForm = document.getElementById('myForm');
     myForm.addEventListener('submit', function(e) {
@@ -28,7 +29,7 @@ export default function Add() {
         body: JSON.stringify(data)
       })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => console.log(data)).then(setSuccess(`Successfully added movie ${data.name} `))
         .catch(error => console.error(error));
     });
   }, []);
@@ -101,6 +102,7 @@ export default function Add() {
               </div>
 
               <button type="submit" className={styles.button}>Submit</button>
+              <p>{success}</p>
             </form>
           </div></></>
     );

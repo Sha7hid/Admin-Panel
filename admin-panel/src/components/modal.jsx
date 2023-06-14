@@ -5,16 +5,19 @@ import { Button } from 'react-bootstrap';
 
 export default function Modals(props) {
   const { show, handleClose, result } = props;
+  const [success, setSuccess] = useState(null);
   const [formData, setFormData] = useState({
     name: result.name,
     rating: result.rating,
     release_year: result.release_year,
     image: result.image
   });
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = result._id;
+ 
 
     fetch(`https://horror-api-production.up.railway.app/api/horror/horror/edit/${id}`, {
       method: 'PUT',
@@ -24,7 +27,7 @@ export default function Modals(props) {
       body: JSON.stringify(formData)
     })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => console.log(data)).then(setSuccess("Succesfully Updated"))
       .catch(error => console.error(error));
   };
 
@@ -95,6 +98,8 @@ export default function Modals(props) {
           <button type="submit" className={styles.buttonSave}>
             Save Changes
           </button>
+          <p>{success}</p>
+          
         </form>
       </Modal.Body>
       <Modal.Footer>
