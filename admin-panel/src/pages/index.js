@@ -8,8 +8,9 @@ import styles from "../styles/Home.module.css";
 import { Row , Col, Button} from "react-bootstrap";
 import Link from "next/link";
 import Modals from "@/components/modal";
+import { useRouter } from 'next/router';
 export const getStaticProps = async () => {
-
+  
 
   const res = await fetch(
     "https://horror-api-production.up.railway.app/api/horror",{ cache: 'no-store' }
@@ -20,7 +21,7 @@ export const getStaticProps = async () => {
   };
 };
 export default function Home({ results }) {
-  
+  const router = useRouter();
   const [selectedId, setSelectedId] = useState(null);
 
   const handleShow = (id) => {
@@ -44,6 +45,7 @@ export default function Home({ results }) {
       .then(response => response.json())
       .then(data => console.log(data))
       .catch(error => console.error(error));
+      router.reload();
   };
 
 

@@ -2,8 +2,9 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState } from "react";
 import styles from '../styles/modal.module.css'
 import { Button } from 'react-bootstrap';
-
+import { useRouter } from 'next/router';
 export default function Modals(props) {
+  const router = useRouter();
   const { show, handleClose, result } = props;
   const [success, setSuccess] = useState(null);
   const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ export default function Modals(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = result._id;
- 
+   
 
     fetch(`https://horror-api-production.up.railway.app/api/horror/horror/edit/${id}`, {
       method: 'PUT',
@@ -29,13 +30,17 @@ export default function Modals(props) {
       .then(response => response.json())
       .then(data => console.log(data)).then(setSuccess("Succesfully Updated"))
       .catch(error => console.error(error));
+      router.reload();
   };
+  
+  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
+   
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Edit the movie</Modal.Title>
