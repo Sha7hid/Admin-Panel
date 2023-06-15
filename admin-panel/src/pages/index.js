@@ -8,8 +8,7 @@ import styles from "../styles/Home.module.css";
 import { Row , Col, Button} from "react-bootstrap";
 import Link from "next/link";
 import Modals from "@/components/modal";
-import { useRouter } from 'next/router';
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   
 
   const res = await fetch(
@@ -21,7 +20,6 @@ export const getStaticProps = async () => {
   };
 };
 export default function Home({ results }) {
-  const router = useRouter();
   const [selectedId, setSelectedId] = useState(null);
 
   const handleShow = (id) => {

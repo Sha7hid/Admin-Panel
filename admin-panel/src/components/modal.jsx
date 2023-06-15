@@ -2,9 +2,8 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState } from "react";
 import styles from '../styles/modal.module.css'
 import { Button } from 'react-bootstrap';
-import { useRouter } from 'next/router';
 export default function Modals(props) {
-  const router = useRouter();
+  
   const { show, handleClose, result } = props;
   const [success, setSuccess] = useState(null);
   const [formData, setFormData] = useState({
@@ -30,7 +29,6 @@ export default function Modals(props) {
       .then(response => response.json())
       .then(data => console.log(data)).then(setSuccess("Succesfully Updated"))
       .catch(error => console.error(error));
-      router.reload();
   };
   
   
