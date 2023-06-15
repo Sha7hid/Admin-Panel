@@ -21,7 +21,7 @@ export const getServerSideProps = async () => {
 };
 export default function Home({ results }) {
   const [selectedId, setSelectedId] = useState(null);
-
+  const [success, setSuccess] = useState(null);
   const handleShow = (id) => {
     setSelectedId(id);
   };
@@ -41,7 +41,7 @@ export default function Home({ results }) {
       }
     })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => console.log(data)).then(setSuccess("Succesfully Deleted"))
       .catch(error => console.error(error));
   };
 
@@ -103,6 +103,7 @@ export default function Home({ results }) {
   <Button variant="default" className={styles.button2} onClick={() => handleDelete(result._id)}>Delete</Button>
      
   </Card.Footer>
+  <p>{success}</p>
       </Card.Body>
     </Card>
             </Col>
