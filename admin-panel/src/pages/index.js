@@ -62,7 +62,7 @@ export default function Home({ results }) {
       </Head>
       <Navbar className={styles.navbar} fixed="top" bg="dark" variant="dark">
         <Container >
-          <Navbar.Brand href="#home">Admin Panel</Navbar.Brand>
+          <Navbar.Brand href={"/"}>Admin Panel</Navbar.Brand>
          
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -71,6 +71,7 @@ export default function Home({ results }) {
           </Nav>
         </Navbar.Collapse>
         </Container>
+        <p className={styles.success}>{success}</p>
       </Navbar>
       <main className={styles.main}>
       {results.map((result) => (
@@ -111,7 +112,7 @@ export default function Home({ results }) {
  
           </>
         ))}
-         <p>{success}</p>
+        
             </Row>
       </main>
     </>

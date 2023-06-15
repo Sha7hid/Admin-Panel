@@ -34,3 +34,7 @@
     padding: 0.8rem;
     color: white;
 }
+.success{
+    color: red;
+    background-color: white;
+}
