@@ -1,44 +1,44 @@
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
-import styles from '../styles/modal.module.css'
-import { Button } from 'react-bootstrap';
+import styles from "../styles/modal.module.css";
+import { Button } from "react-bootstrap";
+
+// Main Function which contains the modal and it gets the props which will be displayed in the form
 export default function Modals(props) {
-  
   const { show, handleClose, result } = props;
   const [success, setSuccess] = useState(null);
   const [formData, setFormData] = useState({
     name: result.name,
     rating: result.rating,
     release_year: result.release_year,
-    image: result.image
+    image: result.image,
   });
-  
-
+  // handleSubmit updates the data with the id in the modal form which is given in the update endpoint of the api
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = result._id;
-   
 
-    fetch(`https://horror-api-production.up.railway.app/api/horror/horror/edit/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(response => response.json())
-      .then(data => console.log(data)).then(setSuccess("Succesfully Updated"))
-      .catch(error => console.error(error));
+    fetch(
+      `https://horror-api-production.up.railway.app/api/horror/horror/edit/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .then(setSuccess("Succesfully Updated"))
+      .catch((error) => console.error(error));
   };
-  
-  
-
+  // handleChange is used to detect any change in the form Data
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  // returns the entire modal component in the home page
   return (
-   
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Edit the movie</Modal.Title>
@@ -102,7 +102,6 @@ export default function Modals(props) {
             Save Changes
           </button>
           <p className={styles.success}>{success}</p>
-          
         </form>
       </Modal.Body>
       <Modal.Footer>

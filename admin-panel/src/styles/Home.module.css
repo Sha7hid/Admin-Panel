@@ -1,40 +1,40 @@
-.main{
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
 }
-.link{
-    text-decoration: none;
-    color: white;
+.link {
+  text-decoration: none;
+  color: white;
 }
-.link:hover{
-    color: white;
+.link:hover {
+  color: white;
 }
-.navbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.button{
-    background-color: blue;
-    color: white;
-    margin-right: 0.8rem;
+.button {
+  background-color: blue;
+  color: white;
+  margin-right: 0.8rem;
 }
-.button2{
-    background-color: red;
-    color: white;
+.button2 {
+  background-color: red;
+  color: white;
 }
-.button:hover{
-    background-color: blue;
-    padding: 0.8rem;
-    color: white;
+.button:hover {
+  background-color: blue;
+  padding: 0.8rem;
+  color: white;
 }
-.button2:hover{
-    background-color: red;
-    padding: 0.8rem;
-    color: white;
+.button2:hover {
+  background-color: red;
+  padding: 0.8rem;
+  color: white;
 }
-.success{
-    color: red;
-    font-weight: bold;
+.success {
+  color: red;
+  font-weight: bold;
 }

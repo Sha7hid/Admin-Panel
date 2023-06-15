@@ -1,47 +1,47 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 5rem;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
 }
-.link{
-    text-decoration: none;
-    color: white;
+.link {
+  text-decoration: none;
+  color: white;
 }
-.link:hover{
-    color: white;
+.link:hover {
+  color: white;
 }
-.h1{
-    color: red;
-    font-size: 2rem;
+.h1 {
+  color: red;
+  font-size: 2rem;
 }
-.form{
-    display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.formGroup{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+.formGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-.label{
-    font-size: 1.2rem;
-    color: red;
-    margin-right: 1rem;
+.label {
+  font-size: 1.2rem;
+  color: red;
+  margin-right: 1rem;
 }
-.button{
-    color: white;
-    background-color: black;
-    padding: 1rem;
+.button {
+  color: white;
+  background-color: black;
+  padding: 1rem;
 }
-.success{
-    color: red;
-    font-size: larger;
-    font-weight: bold;
+.success {
+  color: red;
+  font-size: larger;
+  font-weight: bold;
 }

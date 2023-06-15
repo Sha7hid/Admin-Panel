@@ -1,10 +1,10 @@
-.buttonSave{
-    margin-top: 0.5rem;
-    background-color: blue;
-    color: white;
+.buttonSave {
+  margin-top: 0.5rem;
+  background-color: blue;
+  color: white;
 }
-.success{
-    color: red;
-    font-size: larger;
-    font-weight: bold;
+.success {
+  color: red;
+  font-size: larger;
+  font-weight: bold;
 }

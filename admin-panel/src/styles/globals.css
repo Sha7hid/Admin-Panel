@@ -1,14 +1,14 @@
-input{
-    padding: 0.7rem 0.5rem;
-    border: solid 2px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    color: red;
-    font-size: 1rem;
+input {
+  padding: 0.7rem 0.5rem;
+  border: solid 2px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: red;
+  font-size: 1rem;
 }
-input:focus{
-   outline: none;
-    color: red;
-    font-size: 1.2rem;
+input:focus {
+  outline: none;
+  color: red;
+  font-size: 1.2rem;
 }
