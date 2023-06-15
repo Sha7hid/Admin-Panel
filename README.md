@@ -13,6 +13,11 @@ Install my-project with npm
   npm Install
   npx next dev
   ```
+## pages - /src/pages
++ index.js
++ add.js
+## components - /src/components 
++ modal.jsx
 ## HomePage
 ![App Screenshot](https://github.com/Sha7hid/Admin-Panel/assets/96056167/711793ba-31de-4b1c-858e-24c8bdabc4c8)
 ## Add Page
