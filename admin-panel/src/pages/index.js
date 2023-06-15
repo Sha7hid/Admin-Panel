@@ -103,7 +103,6 @@ export default function Home({ results }) {
   <Button variant="default" className={styles.button2} onClick={() => handleDelete(result._id)}>Delete</Button>
      
   </Card.Footer>
-  <p>{success}</p>
       </Card.Body>
     </Card>
             </Col>
@@ -112,6 +111,7 @@ export default function Home({ results }) {
  
           </>
         ))}
+         <p>{success}</p>
             </Row>
       </main>
     </>
