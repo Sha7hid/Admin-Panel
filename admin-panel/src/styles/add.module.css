@@ -40,3 +40,8 @@ flex-direction: column;
     background-color: black;
     padding: 1rem;
 }
+.success{
+    color: red;
+    font-size: larger;
+    font-weight: bold;
+}

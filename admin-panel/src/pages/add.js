@@ -102,7 +102,7 @@ export default function Add() {
               </div>
 
               <button type="submit" className={styles.button}>Submit</button>
-              <p>{success}</p>
+              <p className={styles.success}>{success}</p>
             </form>
           </div></></>
     );
