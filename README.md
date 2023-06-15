@@ -12,3 +12,4 @@ Install my-project with npm
   cd admin-panel
   npm Install
   npx next dev
+  ```
