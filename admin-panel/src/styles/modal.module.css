@@ -3,3 +3,8 @@
     background-color: blue;
     color: white;
 }
+.success{
+    color: red;
+    font-size: larger;
+    font-weight: bold;
+}

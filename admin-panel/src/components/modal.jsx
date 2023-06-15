@@ -101,7 +101,7 @@ export default function Modals(props) {
           <button type="submit" className={styles.buttonSave}>
             Save Changes
           </button>
-          <p>{success}</p>
+          <p className={styles.success}>{success}</p>
           
         </form>
       </Modal.Body>
