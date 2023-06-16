@@ -18,7 +18,7 @@ import Modals from "@/components/modal";
 export const getServerSideProps = async () => {
   // fetching data from the api and saving it in Json format in results
   const res = await fetch(
-    "https://horror-api-production.up.railway.app/api/horror",
+    // Your API Get endpoint here,
     { cache: "no-store" }
   );
   const data = await res.json();
@@ -49,7 +49,7 @@ export default function Home({ results }) {
     const id = props;
 
     fetch(
-      `https://horror-api-production.up.railway.app/api/horror/horror/${id}`,
+      // ` Your API Delete endpoint here/${id}`,
       {
         method: "DELETE",
         headers: {

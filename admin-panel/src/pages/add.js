@@ -27,13 +27,16 @@ export default function Add() {
         image: formData.get("image"),
       };
 
-      fetch("https://horror-api-production.up.railway.app/api/horror/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
+      fetch(
+        // Your API Post endpoint here
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      )
         .then((response) => response.json())
         .then((data) => console.log(data))
         .then(setSuccess(`Successfully added movie ${data.name} `))
