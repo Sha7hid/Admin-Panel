@@ -19,7 +19,7 @@ export default function Modals(props) {
     const id = result._id;
 
     fetch(
-      `https://horror-api-production.up.railway.app/api/horror/horror/edit/${id}`,
+      // ` Your API Update endpoint here/${id}`,
       {
         method: "PUT",
         headers: {
